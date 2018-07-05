@@ -1,0 +1,20 @@
+﻿<h1>Welcome to Acme Flights</h1>
+
+
+<fieldset>
+    <legend>Input:</legend>
+    Enter start date: <input type="text" name="txtName" data-ng-model="homevm.user.startDate"><br>
+    Enter end date: <input type="text" name="txtNumber" data-ng-model="homevm.user.endDate"><br>   
+    Enter No.of passengers: <input type="text" name="txtPax" data-ng-model="homevm.user.pax"><br>     
+    <button type="button" data-ng-click="homevm.Convert()">Check availability</button>
+</fieldset>
+
+
+
+<fieldset>
+    <legend>Available Flights</legend>
+    <span data-ng-if="homevm.response.error" style="color: red">{{homevm.response.error}}</span>
+    <div data-ng-if="!homevm.response.error">
+        <span>{{homevm.response.flightName}}</span><br />
+    </div>
+</fieldset>
